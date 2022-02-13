@@ -1,0 +1,22 @@
+/*
+https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/549/
+시간복잡도 O(n) 공간복잡도 O(1)로 풀어야 하는 문제
+XOR을 사용한다.
+XOR의 경우 다음과 같다.
+A^0 = A
+A^A = 0
+A^B^C^A^C=A^A^C^C^B=0^0^B = B
+즉, XOR을 사용하면 짝수인 요소를 모두 없애기 가능하다.
+*/
+
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int singlenum=0; 
+        for(int i =0; i<nums.size(); i++)
+        {
+            singlenum = singlenum^nums[i];
+        }
+        return singlenum;
+    }
+};
